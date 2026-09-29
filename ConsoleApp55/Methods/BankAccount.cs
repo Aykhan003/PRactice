@@ -18,4 +18,14 @@ internal class BankAccount
             Balance = 0;
         }
     }
+    public void Deposit(decimal amount)
+    {
+        if (amount <= 0)
+        {
+            throw new ArgumentException("Deposit amount must be greater than zero!");
+        }
+
+        Balance += amount;
+        Console.WriteLine($"[Success]: {amount} AZN added. Current balance: {Balance} AZN");
+    }
 }
